@@ -8,6 +8,7 @@ import PlatformSelector from "./components/PlatformSelector";
 import SortSelector from "./components/SortSelector";
 import { Platform } from "./hooks/usePlatforms";
 import { Genre } from "./hooks/useGenres";
+import LoadMoreButton from "./components/LoadMoreButton";
 
 export interface GameQuery {
   genre: Genre | null;
