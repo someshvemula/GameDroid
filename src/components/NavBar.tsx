@@ -1,7 +1,9 @@
-import { HStack, Image } from '@chakra-ui/react'
-import logo from '../assets/logo.webp';
-import ColorModeSwitch from './ColorModeSwitch';
-import SearchInput from './SearchInput';
+import { Box, HStack, Image } from "@chakra-ui/react";
+import logo from "../assets/logo.webp";
+import ColorModeSwitch from "./ColorModeSwitch";
+import SearchInput from "./SearchInput";
+import Lottie from "lottie-react";
+import AnimatedLogo from "../assets/AnimatedLogo.json";
 
 interface Props {
   onSearch: (searchText: string) => void;
@@ -9,12 +11,14 @@ interface Props {
 
 const NavBar = ({ onSearch }: Props) => {
   return (
-    <HStack padding='10px'>
-      <Image src={logo} boxSize='60px' />
+    <HStack padding="10px">
+      <Box boxSize={"50px"}>
+        <Lottie animationData={AnimatedLogo} loop={0}></Lottie>
+      </Box>
       <SearchInput onSearch={onSearch} />
       <ColorModeSwitch />
     </HStack>
-  )
-}
+  );
+};
 
-export default NavBar
+export default NavBar;
