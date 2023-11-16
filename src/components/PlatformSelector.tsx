@@ -36,7 +36,7 @@ const PlatformSelector = () => {
           >
             <HStack>
               <Image
-                src={platform.platforms[0].image_background}
+                src={getCroppedImageUrl(platform.platforms[0].image_background)}
                 boxSize={"30px"}
               />
               <h1>{platform.name}</h1>
