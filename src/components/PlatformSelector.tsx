@@ -1,8 +1,17 @@
-import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import {
+  Button,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  HStack,
+  Box,
+  Image,
+} from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
-import { Platform } from "../hooks/usePlatforms";
 import usePlatforms from "../hooks/usePlatforms";
 import useGameStore from "../stores/store";
+import getCroppedImageUrl from "../services/image-url";
 
 const PlatformSelector = () => {
   const { data, error } = usePlatforms();
@@ -10,7 +19,7 @@ const PlatformSelector = () => {
   const selectedPlatformId = useGameStore((s) => s.gameQuery.platform);
 
   if (error) return null;
-  const selectedPlatformObject = data.results.find(
+  const selectedPlatformObject = data?.results.find(
     (platform) => platform.id === selectedPlatformId
   );
 
@@ -25,7 +34,13 @@ const PlatformSelector = () => {
             onClick={() => setPlatformId(platform.id)}
             key={platform.id}
           >
-            {platform.name}
+            <HStack>
+              <Image
+                src={platform.platforms[0].image_background}
+                boxSize={"30px"}
+              />
+              <h1>{platform.name}</h1>
+            </HStack>
           </MenuItem>
         ))}
       </MenuList>

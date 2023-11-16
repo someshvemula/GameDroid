@@ -12,7 +12,7 @@ const GameHeading = () => {
   const selectedGenreObject = genres.results.find(
     (genre) => genre.id === selectedGenreId
   );
-  const selectedPlatformObject = platforms.results.find(
+  const selectedPlatformObject = platforms?.results.find(
     (platform) => platform.id === selectedPlatformId
   );
   const heading = `${selectedPlatformObject?.name || ""} ${
