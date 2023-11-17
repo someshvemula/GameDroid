@@ -1,19 +1,5 @@
 import { create } from "zustand";
-
-export interface GameQuery {
-  genre?: number | null;
-  platform?: number | null;
-  sortOrder?: string;
-  searchText?: string;
-}
-
-interface gameQueryStore {
-  gameQuery: GameQuery;
-  setSearchText: (searchText: string) => void;
-  setGenreId: (genreId: number) => void;
-  setPlatformId: (platformId: number) => void;
-  setSortOrder: (sortOrder: string) => void;
-}
+import { gameQueryStore } from "../entities/gameQueryStore";
 
 const useGameStore = create<gameQueryStore>((set) => ({
   gameQuery: {},

@@ -1,20 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import platforms from "../data/platforms";
 import APIClient, { FetchResponse } from "../services/api-client";
+import { Result } from "../entities/Result";
 
-interface Result {
-  id: number;
-  name: string;
-  slug: string;
-  platforms: Platform[];
-}
-export interface Platform {
-  id: number;
-  name: string;
-  slug: string;
-  image_background: string;
-  image: string | null;
-}
 const apiClient = new APIClient<Result>("/platforms/lists/parents");
 const usePlatforms = () =>
   useQuery<FetchResponse<Result>, Error>({

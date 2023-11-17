@@ -5,12 +5,15 @@ import SearchInput from "./SearchInput";
 import Lottie from "lottie-react";
 import AnimatedLogo from "../assets/AnimatedLogo.json";
 import useGameStore from "../stores/store";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <HStack padding="10px">
       <Box boxSize={"50px"}>
-        <Lottie animationData={AnimatedLogo} loop={0}></Lottie>
+        <Link to={"/"}>
+          <Lottie animationData={AnimatedLogo} loop={0}></Lottie>
+        </Link>
       </Box>
       <SearchInput />
       <ColorModeSwitch />
