@@ -1,10 +1,8 @@
-import { Box, HStack, Image } from "@chakra-ui/react";
-import logo from "../assets/logo.webp";
+import { Box, HStack } from "@chakra-ui/react";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 import Lottie from "lottie-react";
 import AnimatedLogo from "../assets/AnimatedLogo.json";
-import useGameStore from "../stores/store";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {

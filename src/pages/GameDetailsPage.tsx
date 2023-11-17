@@ -1,12 +1,12 @@
-import { Heading, Spinner, Button, Collapse } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { Heading, Spinner } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
+import ExpandableText from "../components/ExpandableText";
+import GameAttribute from "../components/GameAttribute";
 import useGame from "../hooks/useGame";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
   const { data: game, error, isLoading } = useGame(slug!);
-  const [expanded, setExpanded] = useState(false);
 
   if (isLoading) return <Spinner></Spinner>;
 
@@ -14,17 +14,8 @@ const GameDetailsPage = () => {
   return (
     <>
       <Heading>{game.name}</Heading>
-      <Collapse startingHeight={24} animateOpacity={true} in={expanded}>
-        {game.description_raw}
-      </Collapse>
-      <Button
-        colorScheme={expanded ? "red" : "green"}
-        size="sm"
-        onClick={() => setExpanded(!expanded)}
-        mt="1rem"
-      >
-        Show {expanded ? "Less" : "More"}
-      </Button>
+      <ExpandableText game={game}></ExpandableText>
+      <GameAttribute game={game}></GameAttribute>
     </>
   );
 };
