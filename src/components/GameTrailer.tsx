@@ -14,6 +14,7 @@ const GameTrailer = ({ gameId }: Props) => {
       src={data?.results[0].data.max}
       poster={data?.results[0].preview}
       controls
+      playsInline
     ></video>
   );
 };
