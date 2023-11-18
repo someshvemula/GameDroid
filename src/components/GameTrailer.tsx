@@ -9,11 +9,12 @@ const GameTrailer = ({ gameId }: Props) => {
   if (error) throw error;
   if (data?.count === 0) return null;
   return (
-    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
-      {data?.results.map((trailer) => (
-        <video src={trailer.data.max} poster={trailer.preview} controls></video>
-      ))}
-    </SimpleGrid>
+    <video
+      key={data?.results[0].id}
+      src={data?.results[0].data.max}
+      poster={data?.results[0].preview}
+      controls
+    ></video>
   );
 };
 

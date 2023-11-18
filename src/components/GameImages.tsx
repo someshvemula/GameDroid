@@ -6,7 +6,6 @@ interface Props {
 }
 const GameImages = ({ gameId }: Props) => {
   const { data: images, error, isLoading } = useImages(gameId);
-  console.log(images?.results);
   if (isLoading) return null;
   if (error) throw error;
   return (
