@@ -1,3 +1,4 @@
+import { SimpleGrid } from "@chakra-ui/react";
 import useTrailers from "../hooks/useTrailers";
 interface Props {
   gameId: number;
@@ -8,11 +9,11 @@ const GameTrailer = ({ gameId }: Props) => {
   if (error) throw error;
   if (data?.count === 0) return null;
   return (
-    <video
-      src={data?.results[0].data.max}
-      poster={data?.results[0].preview}
-      controls
-    />
+    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
+      {data?.results.map((trailer) => (
+        <video src={trailer.data.max} poster={trailer.preview} controls></video>
+      ))}
+    </SimpleGrid>
   );
 };
 
