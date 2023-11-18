@@ -31,12 +31,12 @@ const GameDetailsPage = () => {
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
         <GridItem>
           <Heading>{game.name}</Heading>
+          <GameTrailer gameId={game.id}></GameTrailer>
           <ExpandableText game={game}></ExpandableText>
           <GameAttribute game={game}></GameAttribute>
         </GridItem>
 
         <GridItem>
-          <GameTrailer gameId={game.id}></GameTrailer>
           <GameImages gameId={game.id}></GameImages>
         </GridItem>
       </SimpleGrid>
