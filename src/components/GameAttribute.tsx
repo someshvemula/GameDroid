@@ -21,7 +21,7 @@ const GameAttribute = ({ game }: Props) => {
         </DefinitionItem>
         <DefinitionItem heading="Genres">
           {game.genres.map((genre) => (
-            <Text>{genre.name}</Text>
+            <Text key={genre.id}>{genre.name}</Text>
           ))}
         </DefinitionItem>
         <DefinitionItem heading="Publishers">
