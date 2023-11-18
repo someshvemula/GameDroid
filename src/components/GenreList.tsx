@@ -6,10 +6,8 @@ import {
   List,
   ListItem,
   Spinner,
-  Text,
 } from "@chakra-ui/react";
 import useGenres from "../hooks/useGenres";
-import { Genre } from "../entities/Genre";
 import getCroppedImageUrl from "../services/image-url";
 import useGameStore from "../stores/store";
 
@@ -24,7 +22,7 @@ const GenreList = () => {
 
   return (
     <>
-      <Heading fontSize="2xl" marginTop={9} marginBottom={3}>
+      <Heading fontSize="2xl" marginBottom={3}>
         Genres
       </Heading>
       <List>
