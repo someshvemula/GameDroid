@@ -1,5 +1,6 @@
 import { Box, Grid, GridItem, Show, Flex } from "@chakra-ui/react";
 import React from "react";
+import AdComponent from "../components/AdComponent";
 import GameGrid from "../components/GameGrid";
 import GameHeading from "../components/GameHeading";
 import GenreList from "../components/GenreList";
@@ -25,6 +26,7 @@ const HomePage = () => {
         </GridItem>
       </Show>
       <GridItem area="main">
+        <AdComponent clientId="2965238715262493" dataAdSlot="9590710711" />
         <Box paddingLeft={2}>
           <GameHeading />
           <Flex marginBottom={5}>
