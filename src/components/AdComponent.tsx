@@ -146,7 +146,6 @@ const AdComponent = ({ clientId, dataAdSlot }: Props) => {
 
   return (
     <Box overflow="hidden" margin="5px">
-      Google Ad block
       <ins
         className="adsbygoogle"
         style={{ display: "block" }}
