@@ -7,6 +7,7 @@ import GenreList from "../components/GenreList";
 import NavBar from "../components/NavBar";
 import PlatformSelector from "../components/PlatformSelector";
 import SortSelector from "../components/SortSelector";
+import YllixAd from "../components/YllixAd";
 
 const HomePage = () => {
   return (
@@ -26,7 +27,8 @@ const HomePage = () => {
         </GridItem>
       </Show>
       <GridItem area="main">
-        <AdComponent clientId="2965238715262493" dataAdSlot="9590710711" />
+        {/* <AdComponent clientId="2965238715262493" dataAdSlot="9590710711" /> */}
+        <YllixAd />
         <Box paddingLeft={2}>
           <GameHeading />
           <Flex marginBottom={5}>

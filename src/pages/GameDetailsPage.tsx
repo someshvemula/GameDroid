@@ -15,6 +15,7 @@ import GameAttribute from "../components/GameAttribute";
 import GameGrid from "../components/GameGrid";
 import GameImages from "../components/GameImages";
 import GameTrailer from "../components/GameTrailer";
+import YllixAd from "../components/YllixAd";
 import useGame from "../hooks/useGame";
 import useGames from "../hooks/useGames";
 import useTrailers from "../hooks/useTrailers";
@@ -38,7 +39,8 @@ const GameDetailsPage = () => {
         </GridItem>
 
         <GridItem>
-          <AdComponent clientId="2965238715262493" dataAdSlot="2000829454" />
+          {/* <AdComponent clientId="2965238715262493" dataAdSlot="2000829454" /> */}
+          <YllixAd />
           <GameImages gameId={game.id}></GameImages>
         </GridItem>
       </SimpleGrid>
