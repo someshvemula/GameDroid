@@ -1,5 +1,6 @@
 import useTrailers from "../hooks/useTrailers";
 import ReactPlayer from "react-player";
+import AdComponent from "./AdComponent";
 
 interface Props {
   gameId: number;
