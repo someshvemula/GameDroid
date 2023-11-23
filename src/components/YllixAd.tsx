@@ -17,7 +17,7 @@ const YllixAd = () => {
     const loadYllixScript = () => {
       const script = document.createElement("script");
       script.src = YllixData.adScriptSrc;
-      script.async = true;
+      script.async = false;
       document.head.appendChild(script);
     };
 
@@ -34,8 +34,6 @@ const YllixAd = () => {
         }
         width="728"
         height="90"
-        frameBorder="0"
-        scrolling="no"
         style={{ border: "none", margin: 0, padding: 0 }}
       ></iframe>
     </div>
