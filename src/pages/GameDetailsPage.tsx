@@ -36,6 +36,7 @@ const GameDetailsPage = () => {
           <Heading marginBottom={4}>{game.name}</Heading>
           <ExpandableText game={game}></ExpandableText>
           <GameAttribute game={game}></GameAttribute>
+          <YllixAd />
         </GridItem>
 
         <GridItem>
@@ -44,6 +45,7 @@ const GameDetailsPage = () => {
           <GameImages gameId={game.id}></GameImages>
         </GridItem>
       </SimpleGrid>
+      <YllixAd />
       <Divider marginY={8}></Divider>
       <Heading marginBottom={4} textAlign={"center"}>
         More Games
