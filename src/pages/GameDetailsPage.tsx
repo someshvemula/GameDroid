@@ -43,9 +43,10 @@ const GameDetailsPage = () => {
           {/* <AdComponent clientId="2965238715262493" dataAdSlot="2000829454" /> */}
           <YllixAd />
           <GameImages gameId={game.id}></GameImages>
+          <YllixAd />
         </GridItem>
       </SimpleGrid>
-      <YllixAd />
+
       <Divider marginY={8}></Divider>
       <Heading marginBottom={4} textAlign={"center"}>
         More Games
