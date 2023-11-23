@@ -26,24 +26,18 @@ const YllixAd = () => {
 
   return (
     <div>
-      {/* The ad will load inside this container */}
-      <div id="yllix-ad-container">
-        <script type="text/javascript" src={YllixData.adScriptSrc}></script>
-        <noscript>
-          <a href="https://yllix.com/publishers/437177" target="_blank">
-            <img
-              src={YllixData.adImageUrl}
-              style={{
-                border: "none",
-                margin: 0,
-                padding: 0,
-                verticalAlign: "baseline",
-              }}
-              alt="ylliX - Online Advertising Network"
-            />
-          </a>
-        </noscript>
-      </div>
+      {/* The ad will load inside this iframe */}
+      <iframe
+        title="Yllix Ad"
+        src={
+          "https://udbaa.com/bnr.php?section=General&pub=437177&format=728x90&ga=g"
+        }
+        width="728"
+        height="90"
+        frameBorder="0"
+        scrolling="no"
+        style={{ border: "none", margin: 0, padding: 0 }}
+      ></iframe>
     </div>
   );
 };
