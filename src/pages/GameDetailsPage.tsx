@@ -1,6 +1,5 @@
 import {
   Divider,
-  Grid,
   GridItem,
   Heading,
   SimpleGrid,
@@ -8,8 +7,6 @@ import {
 } from "@chakra-ui/react";
 import { useParams } from "react-router-dom";
 import { useStore } from "zustand";
-import AdComponent from "../components/AdComponent";
-import ContentDivider from "../components/ContentDivider";
 import ExpandableText from "../components/ExpandableText";
 import GameAttribute from "../components/GameAttribute";
 import GameGrid from "../components/GameGrid";
@@ -17,13 +14,14 @@ import GameImages from "../components/GameImages";
 import GameTrailer from "../components/GameTrailer";
 import YllixAd from "../components/YllixAd";
 import useGame from "../hooks/useGame";
-import useGames from "../hooks/useGames";
-import useTrailers from "../hooks/useTrailers";
 import useGameStore from "../stores/store";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
   const { data: game, error, isLoading } = useGame(slug!);
+
+  const setSearchText = useGameStore((s) => s.setSearchText);
+  setSearchText(slug!);
 
   if (isLoading) return <Spinner></Spinner>;
 
