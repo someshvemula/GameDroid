@@ -14,4 +14,5 @@ export interface Game {
   genres: Genre[];
   website: string;
   publishers: Publisher[];
+  released: string;
 }

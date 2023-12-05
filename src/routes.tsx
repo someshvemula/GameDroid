@@ -1,4 +1,3 @@
-import React, { Children } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
 import GameDetailsPage from "./pages/GameDetailsPage";

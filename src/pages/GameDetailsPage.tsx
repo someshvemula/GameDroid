@@ -14,14 +14,13 @@ import GameImages from "../components/GameImages";
 import GameTrailer from "../components/GameTrailer";
 import YllixAd from "../components/YllixAd";
 import useGame from "../hooks/useGame";
+import useStores from "../hooks/useStores";
 import useGameStore from "../stores/store";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
   const { data: game, error, isLoading } = useGame(slug!);
-
-  const setSearchText = useGameStore((s) => s.setSearchText);
-  setSearchText(slug!);
+  const stores = useStores();
 
   if (isLoading) return <Spinner></Spinner>;
 
@@ -33,7 +32,10 @@ const GameDetailsPage = () => {
           <GameTrailer gameId={game.id}></GameTrailer>
           <Heading marginBottom={4}>{game.name}</Heading>
           <ExpandableText game={game}></ExpandableText>
-          <GameAttribute game={game}></GameAttribute>
+          <GameAttribute
+            game={game}
+            stores={stores.data?.results}
+          ></GameAttribute>
           <YllixAd />
         </GridItem>
 
